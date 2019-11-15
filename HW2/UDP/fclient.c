@@ -34,6 +34,7 @@ int main(int argc, char **argv){
 	while(1){
 
 		sendto(sock, argv[3], strlen(argv[3]), 0, (struct sockaddr*)&serv_addr,sizeof(serv_addr));//send filename
+
 		if((str_len = recvfrom(sock,message,BUFSIZE,0,(struct sockaddr*)&serv_addr,&i)) != 0){
 			//if received "received filename..."then file name sent successfully
 			//if nothing is received send filname again
