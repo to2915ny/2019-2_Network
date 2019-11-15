@@ -66,7 +66,10 @@ int main(int argc, char **argv){
 		
 		}
 			write(clnt_sock,OK,strlen(OK));
+			write(clnt_sock,"<!DOCTYPE html> <html><head></head><body><h2>",strlen("<!DOCTYPE html> <html><head></head><body><h2>"));
 			write(clnt_sock,body,strlen(body));
+			write(clnt_sock,"</h2></body></html>",strlen("</h2></body></html>"));
+
 		}
 		if(strcmp(method,"GET")==0){
 			filename = strtok(NULL, " ");
